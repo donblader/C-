@@ -1,0 +1,55 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _3._5EncontrarElTipoDeTrianguloIngresandoLosTresLados
+{
+    class Program
+    {
+        private double lado1, lado2, lado3;
+        public Program()
+        {
+            lado1 = 0.0; lado2 = 0.0; lado3 = 0.0;
+        }
+        public void setLado1(double lado1)
+        { this.lado1 = lado1; }
+        public double getLado1()
+        { return this.lado1; }
+        public void setLado2(double lado2)
+        { this.lado2 = lado2; }
+        public double getLado2()
+        { return this.lado2; }
+        public void setLado3(double lado3)
+        { this.lado3 = lado3; }
+        public double getLado3()
+        { return this.lado3; }
+        static void Main(string[] args)
+        {
+            Program saber = new Program();
+            Console.WriteLine("ingrese el valor del 1er lado");
+            saber.setLado1(Double.Parse(Console.ReadLine()));
+            Console.WriteLine("ingrese el valor del 2do lado");
+            saber.setLado2(Double.Parse(Console.ReadLine()));
+            Console.WriteLine("ingrese el valor del 3er lado");
+            saber.setLado3(Double.Parse(Console.ReadLine()));
+            if ((saber.getLado1() == saber.getLado2()) && (saber.getLado1() == saber.getLado3()) && (saber.getLado2() == saber.getLado3()))
+            {
+                Console.WriteLine("el triangulo es equilatero");
+            }
+            else
+            {
+                if (((saber.getLado1() == saber.getLado2()) && (saber.getLado1() != saber.getLado3())) || ((saber.getLado2() == saber.getLado3()) && (saber.getLado2() != saber.getLado1()))||((saber.getLado3()==saber.getLado1())&&(saber.getLado3()!=saber.getLado2())))
+                {
+                    Console.WriteLine("el triangulo es isósceles");
+                }
+                else
+                {
+                    Console.WriteLine("el triangulo es escaleno");
+                }
+            }
+            Console.ReadLine();
+        }
+    }
+}
