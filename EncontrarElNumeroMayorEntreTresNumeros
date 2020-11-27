@@ -1,0 +1,58 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _3._4EncontrarElNumeroMayorEntreTresNumeros
+{
+    class Program
+    {
+        private double num1, num2, num3, mayor;
+        public Program()
+        {
+            num1 = 0.0; num2 = 0.0; num3 = 0.0; mayor = 0.0;
+        }
+        public void setNum1(double num1)
+        { this.num1 = num1; }
+        public double getNum1()
+        { return this.num1; }
+        public void setNum2(double num2)
+        { this.num2 = num2; }
+        public double getNum2()
+        { return this.num2; }
+        public void setNum3(double num3)
+        { this.num3 = num3; }
+        public double getNum3()
+        { return this.num3; }
+        public void setMayor(double mayor)
+        { this.mayor = mayor; }
+        public double getMayor()
+        { return this.mayor; }
+        static void Main(string[] args)
+        {
+            Program evalua = new Program();
+            Console.WriteLine("ingrese un numero que desee");
+            evalua.setNum1(Double.Parse(Console.ReadLine()));
+            Console.WriteLine("ingrese otro numero que desee");
+            evalua.setNum2(Double.Parse(Console.ReadLine()));
+            Console.WriteLine("ingrese un ultimo numero diferente");
+            evalua.setNum3(Double.Parse(Console.ReadLine()));
+            if((evalua.getNum1()>evalua.getNum2())&&(evalua.getNum1()>evalua.getNum3()))
+            {
+                evalua.setMayor(evalua.getNum1());
+            }
+            else{
+                if ((evalua.getNum2() > evalua.getNum1()) && (evalua.getNum2() > evalua.getNum3()))
+                {
+                    evalua.setMayor(evalua.getNum2());
+                }
+                else {
+                    evalua.setMayor(evalua.getNum3());
+                }
+            }
+            Console.WriteLine("el numero mayor es " + evalua.getMayor());
+            Console.ReadLine();
+        }
+    }
+}
